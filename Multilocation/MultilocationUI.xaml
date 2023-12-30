@@ -1,0 +1,120 @@
+﻿<Window x:Class="Multilocation.MultilocationUI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Multilocation"
+        mc:Ignorable="d"
+        Title="MultilocationUI" Height="518.8" Width="1066.2" ResizeMode="NoResize" Icon="Nouvel_informateur_icon (14).png" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="253*"/>
+            <RowDefinition Height="122*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="backgroundImage" Source="Nouvel_informateur_icon (4).png" Stretch="Fill" Grid.RowSpan="2" HorizontalAlignment="Left" Width="1057"/>
+
+        <Label x:Name="search_label" Content="Search: " HorizontalAlignment="Left" Height="37" Margin="10,101,0,0" VerticalAlignment="Top" Width="132" FontSize="20" FontFamily="MV Boli" FontWeight="Bold" Background="{x:Null}" Foreground="#FF31302A"/>
+        <TextBox x:Name="ValueToSearch" HorizontalAlignment="Left" Height="28" Margin="90,106,0,0" VerticalAlignment="Top" Width="523" FontSize="21" FontFamily="MV Boli" TextWrapping="Wrap" Padding="1,-3,0,2" BorderBrush="#FF7C6F22" Background="#FFE4DFC6"/>
+        <Button x:Name="searchBtn" Content="Search" HorizontalAlignment="Left" Height="25" Margin="627,108,0,0" VerticalAlignment="Top" Width="87" Background="#FFF7E09A" FontSize="20" FontFamily="MV Boli" Padding="1,-3,1,1" Click="searchBtn_Click"/>
+        <Label Content=" Multi Rentals Enterprise" HorizontalAlignment="Left" Height="65" Margin="0,26,0,0" VerticalAlignment="Top" Width="1057" FontSize="45" FontFamily="Palatino Linotype" Padding="5,-4,5,5" FontWeight="Bold" Foreground="#FF020B0E" BorderBrush="#FF7D1818">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCCD1D1" Offset="0.935"/>
+                    <GradientStop Color="#FF7AECF3" Offset="0.2"/>
+                    <GradientStop Color="#FF7AECF3"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <DataGrid x:Name="DataGrid" HorizontalAlignment="Left" Margin="17,157,0,94.8" Width="1023" Background="#FFD6D0D0" BorderBrush="#FF04090E" Foreground="#FF0F0F0E" Grid.RowSpan="2" Padding="0" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" Rental ID" Width="90" Binding="{Binding Location_id}" />
+                <DataGridTextColumn Header=" Rental start date"  Width="120" Binding="{Binding Debut_location}"/>
+                <DataGridTextColumn Header=" First paiement date"  Width="135" Binding="{Binding Premier_paiement}"/>
+                <DataGridTextColumn Header=" Amount 1st paiement"  Width="160" Binding="{Binding Montant_1er_Paiement}"/>
+                <DataGridTextColumn Header=" Total amount of paiements"  Width="190" Binding="{Binding Nbr_Paiement}"/>
+                <DataGridTextColumn Header=" Concerned vehicule"  Width="150" Binding="{Binding Marque}"/>
+                <DataGridTextColumn Header=" Concerned Modele"  Width="150" Binding="{Binding Modele}"/>
+                <DataGridTextColumn Header=" Concerned customer"  Width="150" Binding="{Binding NomComplet}"/>
+                <DataGridTextColumn Header=" Max KM allowed"  Width="150" Binding="{Binding KM_MAX_PERMIS}"/>
+                <DataGridTextColumn Header=" Conditions"  Width="150" Binding="{Binding Supprime}"/>
+                <!-- Custom column for the "Update" button -->
+                <DataGridTemplateColumn Header="Update">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Update"
+                    Click="OnUpdateButtonClick"
+                    Background="#007ACC"
+                    Foreground="White"
+                    BorderBrush="#007ACC"
+                    BorderThickness="1"
+                    Padding="5,3"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="2">
+                                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Trigger.EnterActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                            To="#005A8C"
+                                                            Duration="0:0:0.2" />
+                                                            <ColorAnimation Storyboard.TargetProperty="(Button.BorderBrush).(SolidColorBrush.Color)"
+                                                            To="#005A8C"
+                                                            Duration="0:0:0.2" />
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </Trigger.EnterActions>
+                                                <Trigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                            To="#007ACC"
+                                                            Duration="0:0:0.2" />
+                                                            <ColorAnimation Storyboard.TargetProperty="(Button.BorderBrush).(SolidColorBrush.Color)"
+                                                            To="#007ACC"
+                                                            Duration="0:0:0.2" />
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </Trigger.ExitActions>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter Property="Background" Value="#004C7F" />
+                                                <Setter Property="BorderBrush" Value="#004C7F" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="lightblue"/>
+                    <Setter Property="BorderThickness" Value="0,0,2,2"/>
+                    <Setter Property="BorderBrush" Value="white"/>
+                    <Setter Property="FontSize" Value="14"/>
+                </Style>
+            </DataGrid.Resources>
+        </DataGrid>
+        <Button x:Name="showAllBtn" Content="Show All" HorizontalAlignment="Left" Height="32" Margin="19,95.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="108" FontSize="20" FontFamily="Sitka Display" FontWeight="Bold" Background="#FF78B4B7" BorderBrush="#FF1A509F" Foreground="#FF0F0E0E" Click="showAllBtn_Click"/>
+        <Label Content="( to initiate search please enter `rental_id` )" HorizontalAlignment="Left" Height="28" Margin="85,129,0,0" VerticalAlignment="Top" Width="244"/>
+        <Button x:Name="addLocationBtn" Content="Add new rental" HorizontalAlignment="Left" Height="32" Margin="921,73.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Background="#FF68C87A" BorderBrush="#FFA92626" Foreground="#FF110F0F" FontSize="15" FontFamily="Sitka Heading" FontWeight="Bold" Click="addNewRental_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,64 @@
+﻿<Window x:Class="Multilocation.modify"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Multilocation"
+        mc:Ignorable="d"
+        Title="modify" Height="587" Width="543">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="305*"/>
+            <ColumnDefinition Width="103*"/>
+        </Grid.ColumnDefinitions>
+        <Image Margin="-3,-1,0,0" Source="Nouvel_informateur_icon (4).png" Stretch="Fill" Grid.ColumnSpan="3" HorizontalAlignment="Left" Width="540" RenderTransformOrigin="0.5,0.5" Height="559" VerticalAlignment="Top">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.542"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="2.45"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <Button x:Name="modifyBtn" Content="Go back" HorizontalAlignment="Left" Height="29" Margin="10,494,0,0" VerticalAlignment="Top" Width="106" FontSize="23" FontFamily="Sitka Banner" Background="#FFBFBFC5" Foreground="#FF2E0A0A" Click="goBackBtn_Click" BorderBrush="#FF110D0D"/>
+        <Label Content=" Multi Rentals Enterprise" HorizontalAlignment="Left" Height="65" Margin="-2,26,-1,0" VerticalAlignment="Top" Width="540" FontSize="45" FontFamily="Palatino Linotype" Padding="5,-4,5,5" FontWeight="Bold" Foreground="#FF020B0E" BorderBrush="#FF7D1818" Grid.ColumnSpan="3">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCCD1D1" Offset="0.935"/>
+                    <GradientStop Color="#FF7AECF3" Offset="0.2"/>
+                    <GradientStop Color="#FF7AECF3"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Label Content="Modify rental" HorizontalAlignment="Left" Height="41" Margin="0,105,-2,0" VerticalAlignment="Top" Width="539" FontSize="25" FontFamily="Palatino Linotype" Padding="5,0,5,5" FontWeight="Bold" Foreground="#FF020B0E" BorderBrush="#FF7D1818" Grid.ColumnSpan="3">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCCD1D1" Offset="0.935"/>
+                    <GradientStop Color="#FF7AECF3" Offset="0.2"/>
+                    <GradientStop Color="#FF7AECF3"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <TextBox x:Name="rentalIdTextBox" HorizontalAlignment="Left" Height="30" Margin="150,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontSize="16" Padding="0,2,0,0" Grid.ColumnSpan="2" Grid.Column="1" IsEnabled="False"/>
+        <Label Content="Rental ID :" HorizontalAlignment="Left" Height="30" Margin="51,160,0,0" VerticalAlignment="Top" Width="92" FontSize="17" FontWeight="Bold" FontFamily="Sitka Banner" Grid.Column="1"/>
+        <Label Content="Start date :" HorizontalAlignment="Left" Height="30" Margin="51,195,0,0" VerticalAlignment="Top" Width="92" FontSize="17" FontWeight="Bold" FontFamily="Sitka Banner" Grid.Column="1"/>
+        <Label Content="1st payment :" HorizontalAlignment="Left" Height="30" Margin="35,230,0,0" VerticalAlignment="Top" Width="104" FontSize="17" FontWeight="Bold" FontFamily="Sitka Banner" Grid.Column="1"/>
+        <TextBox x:Name="_1erPaiement" HorizontalAlignment="Left" Height="30" Margin="150,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontSize="16" Padding="0,2,0,0" Grid.ColumnSpan="2" Grid.Column="1" IsEnabled="False"/>
+        <Label Content="Amount 1st payment :" HorizontalAlignment="Left" Height="30" Margin="105,265,0,0" VerticalAlignment="Top" Width="164" FontSize="17" FontWeight="Bold" FontFamily="Sitka Banner" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="totalPaiement" HorizontalAlignment="Left" Height="30" Margin="150,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontSize="16" Padding="0,2,0,0" Grid.ColumnSpan="2" Grid.Column="1" IsEnabled="False"/>
+        <Label Content="Total payments : " HorizontalAlignment="Left" Height="30" Margin="12,300,0,0" VerticalAlignment="Top" Width="131" FontSize="17" FontWeight="Bold" FontFamily="Sitka Banner" Grid.Column="1"/>
+        <TextBox x:Name="Vehicule_vise" HorizontalAlignment="Left" Height="30" Margin="150,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontSize="16" Padding="0,2,0,0" Grid.ColumnSpan="2" Grid.Column="1" IsEnabled="False"/>
+        <Label Content="Concerned vehicule : " HorizontalAlignment="Left" Height="30" Margin="112,335,0,0" VerticalAlignment="Top" Width="157" FontSize="17" FontWeight="Bold" FontFamily="Sitka Banner" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="concernedClient" HorizontalAlignment="Left" Height="30" Margin="150,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontSize="16" Padding="0,2,0,0" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Label Content="Concerned client : " HorizontalAlignment="Left" Height="30" Margin="1,370,0,0" VerticalAlignment="Top" Width="142" FontSize="17" FontWeight="Bold" FontFamily="Sitka Banner" Grid.Column="1"/>
+        <TextBox x:Name="termes_location" HorizontalAlignment="Left" Height="30" Margin="150,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontSize="16" Padding="0,2,0,0" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Label Content="Termes and conditions : " HorizontalAlignment="Left" Height="30" Margin="88,405,0,0" VerticalAlignment="Top" Width="184" FontSize="17" FontWeight="Bold" FontFamily="Sitka Banner" Grid.ColumnSpan="2"/>
+        <DatePicker x:Name="date1erPaiement" HorizontalAlignment="Left" Margin="150,230,0,0" VerticalAlignment="Top" Height="30" Width="191" Grid.ColumnSpan="2" Grid.Column="1" IsEnabled="False"/>
+        <TextBox x:Name="debut_location" HorizontalAlignment="Left" Height="30" Margin="150,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontSize="16" Padding="0,2,0,0" IsEnabled="False" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="updateBtn" Grid.ColumnSpan="2" Content="UPDATE" Height="28" Margin="239,460,70,0" VerticalAlignment="Top" FontSize="20" FontFamily="Sitka Banner" RenderTransformOrigin="0.944,0.564" Grid.Column="1" Background="#FF1B64CF" Foreground="white" Click="UpdateBtn_Click"/>
+
+    </Grid>
+</Window>
